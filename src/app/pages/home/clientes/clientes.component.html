@@ -1,1 +1,14 @@
 <h2 class="text-center mt-2 fw-bold">Listado de clientes</h2>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let c of clientes" class="col-md-3">
+            <div class="card border-dark mb-3">
+                <div class="card-header"> {{c.usuario_id}} </div>
+                <div class="card-body text-dark" style="min-height: 140px;">
+                    <h5 class="card-title fw-bold"> {{c.email}} </h5>
+                    <p class="card-text">Fecha de cración: {{c.fecha_creacion}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
