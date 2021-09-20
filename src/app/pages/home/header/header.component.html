@@ -10,8 +10,22 @@
                 <li class="nav-item">
                     <a class="nav-link me-2" href="/clientes">Clientes</a>
                 </li>
-                <li>
+                <li *ngIf="!authService.estaAutenticado()">
                     <a href="/login" class="btn btn-dark">Iniciar Sesión</a>
+                </li>
+                <li *ngIf="authService.estaAutenticado()" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{authService.usuario.username}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Mis compras</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item cerrar-sesion" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
