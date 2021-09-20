@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/user/login/login.component';
 import { FormComponent } from './pages/home/clientes/form/form.component';
 import { ClienteService } from './service/cliente.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     ClienteService

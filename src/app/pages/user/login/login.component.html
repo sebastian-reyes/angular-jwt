@@ -7,16 +7,16 @@
             <form action="" method="post">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name="username" id="exampleFormControlInput1"
-                        placeholder="Correo electrónico" autofocus required>
+                    <input [(ngModel)]="usuario.username" type="email" class="form-control" name="username"
+                        id="exampleFormControlInput1" placeholder="Correo electrónico" autofocus required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="password" id="exampleFormControlInput1"
-                        placeholder="Contraseña" autofocus required>
+                    <input [(ngModel)]="usuario.password" type="password" class="form-control" name="password"
+                        id="exampleFormControlInput1" placeholder="Contraseña" autofocus required>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-dark w-100" value="Ingresar">
+                    <input (click)='login()' type="submit" class="btn btn-dark w-100" value="Ingresar">
                 </div>
             </form>
         </div>
