@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     console.log(this.usuario)
-    if(this.usuario.username == null || this.usuario.password == null){
+    if (this.usuario.username == null || this.usuario.password == null) {
       Swal.fire(
         'Error',
         'Email o contraseña vacías',
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       );
       return;
     }
-    this.authService.login(this.usuario).subscribe(response =>{
+    this.authService.login(this.usuario).subscribe(response => {
       console.log(response);
       this.authService.guardarUsuario(response.access_token);
       this.authService.guardarToken(response.access_token);
@@ -42,6 +42,14 @@ export class LoginComponent implements OnInit {
         `Hola ${usuario.username} has iniciado sesión con éxito`,
         'success'
       )
+    }, err => {
+      if (err.status = 400) {
+        Swal.fire(
+          'Error',
+          'Usuario o clave incorrecta',
+          'error'
+        )
+      }
     });
   }
 
